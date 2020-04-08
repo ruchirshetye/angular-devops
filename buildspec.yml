@@ -12,9 +12,11 @@ phases:
   pre_build:
     commands:
       - npm install
+      - npm install -g @angular/cli
   build:
     commands:
       - npm run build:ci
+      - ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer
       - npm run test:ci
     
 artifacts:
