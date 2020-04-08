@@ -16,10 +16,7 @@ phases:
     commands:
       - npm run build:ci
       - npm run test:ci
-  post_build:
-    commands:
-      - aws s3 sync ./dist/angular-devops s3://angular-devops-production --acl 'public-read' --delete
-
+    
 artifacts:
   files:
     - '**/*.html'
